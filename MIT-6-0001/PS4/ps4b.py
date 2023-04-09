@@ -307,6 +307,8 @@ if __name__ == '__main__':
     cipherTest4 = CiphertextMessage('dvukly pm aopz htww hzcv ld piapnepo')
     print('Expected Output:', (15, 'skjzan eb pdeo will work as expected'))
     print('Actual Output  :', cipherTest4.decrypt_message())
-    #TODO: best shift value and unencrypted story
 
+    #TODO: best shift value and unencrypted story
+    cipherStory = CiphertextMessage(get_story_string())
+    print(cipherStory.decrypt_message())
     pass #delete this line and replace with your code here
