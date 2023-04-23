@@ -286,10 +286,16 @@ def filter_stories(stories, triggerlist):
 
     Returns: a list of only the stories for which a trigger in triggerlist fires.
     """
-    # TODO: Problem 10
-    # This is a placeholder
-    # (we're just returning all the stories, with no filtering)
-    return stories
+
+    filtered_stories = []
+    for story in stories:
+        for trigger in triggerlist:
+            if trigger.evaluate(story):
+                if story not in filtered_stories:
+                    filtered_stories.append(story)
+                #break
+    return filtered_stories
+    #return stories
 
 
 
@@ -327,11 +333,12 @@ def main_thread(master):
     # A sample trigger list - you might need to change the phrases to correspond
     # to what is currently in the news
     try:
-        t1 = TitleTrigger("election")
-        t2 = DescriptionTrigger("Trump")
-        t3 = DescriptionTrigger("Clinton")
+        t1 = TitleTrigger("supreme")
+        t2 = DescriptionTrigger("ability")
+        t3 = DescriptionTrigger("sleep")
         t4 = AndTrigger(t2, t3)
         triggerlist = [t1, t4]
+        #triggerlist = [t1, t2, t3, t4]
 
         # Problem 11
         # TODO: After implementing read_trigger_config, uncomment this line
@@ -345,7 +352,9 @@ def main_thread(master):
         scrollbar = Scrollbar(master)
         scrollbar.pack(side=RIGHT,fill=Y)
 
-        t = "Google & Yahoo Top News"
+        # Title changes becuase the Yahoo! stories are no longer loaded
+        # t = "Google & Yahoo Top News"
+        t = "Google Top News"
         title = StringVar()
         title.set(t)
         ttl = Label(master, textvariable=title, font=("Helvetica", 18))
@@ -371,7 +380,9 @@ def main_thread(master):
             stories = process("http://news.google.com/news?output=rss")
 
             # Get stories from Yahoo's Top Stories RSS news feed
-            stories.extend(process("http://news.yahoo.com/rss/topstories"))
+            # This no longer functions properly as Yahoo! stories no longer
+            # include discriptions
+            #stories.extend(process("http://news.yahoo.com/rss/topstories"))
 
             stories = filter_stories(stories, triggerlist)
 
