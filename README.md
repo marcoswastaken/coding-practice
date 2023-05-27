@@ -13,9 +13,9 @@ Edition: Second
 Year of Publication: 2016
 ISBN: 978-0262529624
 
-## Coursera - Machine Learning Specialization
+## Coursera-ML
 
-These are some of my lab solutions and practice applying the concepts covered in Machine Learning Specialization: [link to cours](https://www.coursera.org/learn/machine-learning)
+These are some of my lab solutions and practice applying the concepts covered in Machine Learning Specialization course offered on Coursera: [link to cours](https://www.coursera.org/learn/machine-learning)
 
 Data sources:
 - Boston Housing Data: [kaggle source](https://www.kaggle.com/datasets/fedesoriano/the-boston-houseprice-data)
