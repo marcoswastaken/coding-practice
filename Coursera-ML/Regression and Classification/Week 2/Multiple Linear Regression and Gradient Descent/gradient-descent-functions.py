@@ -3,12 +3,13 @@
 """
 Created on Thu May 25 18:42:13 2023
 
-Disclaimer: 
-I am not claiming any credit for the work below. 
-This is just practice code thrown together as I learn, mostly from provided course notes or labs with minor modifications. 
+Disclaimer:
+I am not claiming any credit for the work below.
+This is just practice code thrown together as I learn, mostly from provided course notes or labs with minor modifications.
 See the README for links to the associated courses and other info.
 
 """
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
